@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/", "/_next/"],
     },
-    sitemap: "https://nexvoltenterprises.com/sitemap.xml",
+    sitemap: "https://www.nexvoltenterprises.com/sitemap.xml",
   };
 }
