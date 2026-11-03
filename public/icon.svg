@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="boltCore" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#FFF9A6" />
+      <stop offset="50%" stopColor="#FFD700" />
+      <stop offset="100%" stopColor="#E5A800" />
+    </linearGradient>
+  </defs>
+  <!-- Dark Contrast Shield with Gold Rim -->
+  <rect width="32" height="32" rx="7" fill="#0B0B0D" stroke="#FFD700" stroke-width="1.2" />
+  <!-- Vibrant Electric Gold Lightning Bolt -->
+  <polygon
+    points="20,3 7,17 15,17 11,29 25,14 17,14"
+    fill="url(#boltCore)"
+  />
+  <!-- High-Luminance White Highlight Core for Extreme Clarity at 16px -->
+  <polygon
+    points="19,5 9,16 15,16 12,26 22,15 17,15"
+    fill="#FFFFFF"
+  />
+</svg>
