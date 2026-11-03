@@ -21,7 +21,7 @@ function searchCommons(q) {
           const p = pages[pid];
           const info = p.imageinfo?.[0];
           const desc = info?.extmetadata?.ObjectName?.value || info?.extmetadata?.ImageDescription?.value || '';
-          console.log(`- Title: "${p.title}"`);
+          console.log(`- Title: "${p.title}" (${desc})`);
           console.log(`  Size: ${info?.width}x${info?.height}`);
           console.log(`  URL: ${info?.url}`);
         }
