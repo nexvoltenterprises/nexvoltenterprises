@@ -1,23 +1,34 @@
 import HeroSection from "@/components/HeroSection";
 import CategoriesSection from "@/components/CategoriesSection";
-import FeaturedProducts from "@/components/FeaturedProducts";
 import AudioShowcase from "@/components/AudioShowcase";
 import ChargingShowcase from "@/components/ChargingShowcase";
-import WhyChooseUs from "@/components/WhyChooseUs";
+import FeaturedProducts from "@/components/FeaturedProducts";
+import BrandIntro from "@/components/BrandIntro";
 import BusinessEnquiry from "@/components/BusinessEnquiry";
-import ContactSection from "@/components/ContactSection";
 
 export default function HomePage() {
   return (
     <>
+      {/* SECTION 1 — CINEMATIC HERO */}
       <HeroSection />
+
+      {/* SECTION 2 — PRODUCT CATEGORY DISCOVERY */}
       <CategoriesSection />
-      <FeaturedProducts />
+
+      {/* SECTION 3 — AUDIO COLLECTION */}
       <AudioShowcase />
+
+      {/* SECTION 4 — CHARGING COLLECTION */}
       <ChargingShowcase />
-      <WhyChooseUs />
+
+      {/* SECTION 5 — NEXVOLT ESSENTIALS */}
+      <FeaturedProducts />
+
+      {/* SECTION 6 — ABOUT NEXVOLT */}
+      <BrandIntro />
+
+      {/* SECTION 7 — BUSINESS PARTNERSHIPS */}
       <BusinessEnquiry />
-      <ContactSection />
     </>
   );
 }

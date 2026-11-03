@@ -56,11 +56,12 @@ export default function Navbar() {
     };
   }, [isMobileMenuOpen]);
 
-  // Close mobile menu and search dropdown when navigating
-  useEffect(() => {
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
     setIsMobileMenuOpen(false);
     setIsSearchOpen(false);
-  }, [pathname]);
+  }
 
   // Handle smooth scroll to categories if on home page
   const handleCategoriesClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -185,12 +186,15 @@ export default function Navbar() {
               {/* Search Toggle Icon */}
               <button
                 type="button"
-                onClick={() => setIsSearchOpen(!isSearchOpen)}
-                className="p-2 text-[#C7C7C7] hover:text-[#F2D675] hover:bg-[#171719] rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
+                onClick={() => window.dispatchEvent(new CustomEvent('open-search-modal'))}
+                className="flex items-center gap-2 px-3 py-1.5 text-xs text-[#C7C7C7] hover:text-white bg-[#171719] hover:bg-[#202026] border border-white/10 hover:border-[#D4AF37]/50 rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
                 aria-label="Search products"
-                aria-expanded={isSearchOpen}
               >
-                <Search className="w-5 h-5" />
+                <Search className="w-3.5 h-3.5 text-[#D4AF37]" />
+                <span className="text-gray-400">Search</span>
+                <kbd className="px-1.5 py-0.5 rounded bg-[#0B0B0D] border border-white/10 text-[10px] text-gray-400 font-mono">
+                  ⌘K
+                </kbd>
               </button>
 
               {/* Enquire Now CTA (Primary Button: gold background with dark text) */}
@@ -208,7 +212,7 @@ export default function Navbar() {
             <div className="flex md:hidden items-center space-x-2">
               <button
                 type="button"
-                onClick={() => setIsSearchOpen(!isSearchOpen)}
+                onClick={() => window.dispatchEvent(new CustomEvent('open-search-modal'))}
                 className="p-2 text-[#C7C7C7] hover:text-[#F2D675] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
                 aria-label="Search products"
               >
